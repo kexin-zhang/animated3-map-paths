@@ -1,0 +1,49 @@
+html, body {
+    min-height: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+path {
+    fill: none;
+    stroke-width: 2px;
+}
+
+.drive, .lake-drive {
+    stroke: #000;
+}
+
+.food-drive, .camp-drive, .return-drive {
+    opacity: 0;
+}
+
+circle {
+    opacity: .4;
+}
+  
+.drive-circle {
+    fill: #000;
+}
+
+
+.hide {
+    opacity: 0;
+}
+
+.hike-circle {
+    fill: #27ae60;
+}
+
+.hike {
+    stroke: #27ae60;
+}
+
+.raft {
+    stroke: #2980b9;
+}
+  
