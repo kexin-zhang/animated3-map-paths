@@ -97,12 +97,8 @@ path {
     stroke-width: 2px;
 }
 
-.drive, .lake-drive {
+.drive, .lake-drive, .return-drive {
     stroke: #34495e;
-}
-
-.food-drive, .camp-drive, .return-drive {
-    opacity: 0;
 }
 
 circle {

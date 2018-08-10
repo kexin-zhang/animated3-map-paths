@@ -137,4 +137,10 @@ class AnimatedMap {
         L.control.legend({ position: position }).addTo(this.map);
     }
 
+    clear() {
+        d3.selectAll("path").remove();
+        d3.selectAll("circle").remove();
+        this.circle = null;
+    }
+
 }; 
