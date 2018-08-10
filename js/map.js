@@ -117,4 +117,24 @@ class AnimatedMap {
                             .attr("class", classname);
     }
 
+    initLegend(values, position) {
+        L.Control.Legend = L.Control.extend({
+            onAdd: function(map) {
+                let div = L.DomUtil.create('div', 'legend');
+                div.innerHTML = "";
+                values.forEach(element => {
+                    div.innerHTML += `<i style="background: ${element.color}"></i> ${element.name} <br>`
+                });
+
+                return div;
+            } 
+        });
+
+        L.control.legend = function(opts) {
+            return new L.Control.Legend(opts);
+        }
+
+        L.control.legend({ position: position }).addTo(this.map);
+    }
+
 }; 

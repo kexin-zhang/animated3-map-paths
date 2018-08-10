@@ -2,6 +2,12 @@ const small_radius = 7;
 const medium_radius = 8;
 const large_radius = 10;
 
+const legend_values = [
+    {name: "Drive", color: "#34495e"},
+    {name: "Hike", color: "#27ae60"},
+    {name: "Raft", color: "#2980b9"},
+];
+
 const zoomStates = {
     HIKE: "hike",
     FOOD_DRIVE: "food_drive",
@@ -35,6 +41,7 @@ onp.addAnimatedPath("./data/onp_drive1.geojson", "drive", 16000, function() {
     currentZoomState = zoomStates.HIKE;
     onp.map.flyTo([47.512171, -123.323818], 14);
 });
+onp.initLegend(legend_values, "topright")
 
 function plotHike() {
     onp.addAnimatedPath("./data/onp_hike.geojson", "hike", 7000, plotLakeDrive);
