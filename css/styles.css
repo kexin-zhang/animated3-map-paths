@@ -1,13 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
 html, body {
     min-height: 100%;
     height: 100%;
     margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+    font-weight: 300;
+}
+
+.flex {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 #map {
-    width: 100%;
     height: 100%;
 }
+
+#sidebar {
+    width: 100%;
+    float: left;
+}
+
+.container {
+    padding: 1em;
+}
+
+.container .header {
+    text-align: center;
+}
+
+.container .header h2, .container .header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.container img {
+    width: 100%;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #bdc3c7;
+}
+
+@media only screen and (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    #map {
+        order: 1;
+    }
+
+    #sidebar {
+        order: 2;
+    }
+
+    #map, #sidebar {
+        flex: 0 0 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    #sidebar {
+        height: 100%;
+        flex: 0 0 33%;
+        overflow-y: auto;
+    }
+
+    #map {
+        flex: 0 0 67%;
+    }
+}
+
+
+/*  map styling starts here */
 
 path {
     fill: none;
@@ -15,7 +99,7 @@ path {
 }
 
 .drive, .lake-drive {
-    stroke: #000;
+    stroke: #34495e;
 }
 
 .food-drive, .camp-drive, .return-drive {
@@ -27,9 +111,8 @@ circle {
 }
   
 .drive-circle {
-    fill: #000;
+    fill: #34495e;
 }
-
 
 .hide {
     opacity: 0;
@@ -46,4 +129,7 @@ circle {
 .raft {
     stroke: #2980b9;
 }
-  
+
+.raft-circle {
+    fill: #2980b9;
+}
