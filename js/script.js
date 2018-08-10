@@ -35,7 +35,7 @@ function zoomReset() {
 
 let onp = new AnimatedMap("map", [47.2995, -122.6207], 9, zoomReset);
 onp.initCircle([-122.33744, 47.61685], "drive-circle", small_radius);
-onp.addAnimatedPath("./data/onp_drive1.geojson", "drive", 16000, function() {
+onp.addAnimatedPath("./data/onp_drive1.geojson", "drive", 10000, function() {
     d3.selectAll(".drive").remove();
     d3.selectAll("circle").remove();
     currentZoomState = zoomStates.HIKE;
@@ -54,7 +54,7 @@ function plotLakeDrive() {
 
 function plotRaft() {
     onp.circle.attr("class", "raft-circle");
-    onp.addAnimatedPath("./data/onp_raft.geojson", "raft", 8000, function() {
+    onp.addAnimatedPath("./data/onp_raft.geojson", "raft", 7000, function() {
         d3.selectAll("path").remove();
         d3.selectAll("circle").remove();
         currentZoomState = zoomStates.FOOD_DRIVE;
@@ -88,5 +88,5 @@ function plotReturnDrive() {
     onp.addPath("./data/onp_raft.geojson", "raft");
 
     onp.initCircle([-123.32757, 47.51479], "drive-circle", small_radius);
-    onp.addAnimatedPath("./data/onp_drive5.geojson", "drive", 16000, null);
+    onp.addAnimatedPath("./data/onp_drive5.geojson", "drive", 10000, null);
 }
